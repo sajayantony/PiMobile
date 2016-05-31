@@ -3,24 +3,33 @@
     // This function creates a closure and puts a mousedown handler on the element specified in the "button" parameter.
     function makeButtonIncrement(button, action, initialDelay, multiplier) {
         var holdTimer, changeValue, timerIsRunning = false, delay = initialDelay;
-        changeValue = function () {
-            webSocketConnection.send(action);
+        changeValue = function (e) {
+            //webSocketConnection.send(action);
             holdTimer = setTimeout(changeValue, delay);
             if (delay > 20) delay = delay * multiplier;
             if (!timerIsRunning) {
+                console.log("Sending" + action);
+                webSocketConnection.send(action);
                 // When the function is first called, it puts an onmouseup handler on the whole document 
                 // that stops the process when the mouse is released. This is important if the user moves
                 // the cursor off of the button.
-                document.onmouseup = function () {
+                var endFunc = function () {
+                    console.log("stop");
                     clearTimeout(holdTimer);
                     document.onmouseup = null;
                     timerIsRunning = false;
                     delay = initialDelay;
                     webSocketConnection.send("stop");
                 }
+
+                document.onmouseup = endFunc;
+                document.ontouchend = endFunc; 
                 timerIsRunning = true;
             }
+            e.preventDefault();
         }
+        
+        button.ontouchstart = changeValue;        
         button.onmousedown = changeValue;
     }
 
