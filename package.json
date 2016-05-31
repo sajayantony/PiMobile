@@ -1,0 +1,14 @@
+{
+  "name": "nodecar",
+  "version": "0.0.0",
+  "description": "Eli's NodeJS Car",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "onoff": "^1.1.0"
+  }
+}
