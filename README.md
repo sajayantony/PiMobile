@@ -16,4 +16,8 @@ sudo ln -s /home/pi/Downloads/node-v6.2.0-linux-armv6l/bin/node /usr/bin/node
 sudo ln -s /home/pi/Downloads/node-v6.2.0-linux-armv6l/bin/npm /usr/bin/npm
 ```
 
+# References 
+
+1. http://camjam.me/?page_id=1035#worksheets 
+2. https://github.com/gildean/raspi-ledblinker
 

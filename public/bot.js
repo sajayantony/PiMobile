@@ -47,34 +47,6 @@
             };
 
             this.connection.onmessage = function (message) {
-                // var json = isValidJson(message.data);
-                // if (json) {
-                //     if (!setLeds && json.type === 'leds') {
-                //         return setNewLeds(json.data);
-                //     } else if (!setButtons && json.type === 'buttons') {
-                //         return setNewButtons(json.data);
-                //     }
-                //     if (json.type === 'leds') {
-                //         Object.keys(json.data).forEach(function (led) {
-                //             var stat = json.data[led].status;
-                //             var b = (stat === 'blinking' || stat === 'stop') ? ledbuttons[led].blink : ledbuttons[led].switch;
-                //             b.style.background = (stat !== 'off') ? (stat !== 'on') ? (stat === 'stop') ? '#1abc9c' : '#16a085' : '#2ecc71' : '#27ae60';
-                //             b.innerText = (stat !== 'stop') ? (stat !== 'blinking') ? (stat === 'on') ? 'off' : 'on' : 'stop' : 'blink';
-                //         });
-                //     } else if (json.type === 'buttons') {
-                //         Object.keys(json.data).forEach(function (button) {
-                //             var but = clickButtons[button];
-                //             if (but.sT) {
-                //                 clearTimeout(but.sT);
-                //             }
-                //             but.counter.innerText = json.data[button].clicks;
-                //             but.clicks.style.color = '#e74c3c';
-                //             but.sT = setTimeout(function () {
-                //                 but.clicks.style.color = '#aaa';
-                //             }, 2000);
-                //         })
-                //     }
-                // }
             };
         },
         send: function (data) {
