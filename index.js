@@ -1,16 +1,18 @@
-var bot = require('./lib/movement')
+var bot = require('./lib/bot')
 var fs = require('fs'),
   http = require('http');
 
 var server = http.createServer(function (req, res) {
   var filename = (req.url === "/") ? "/index.html" : req.url;
-  fs.readFile(__dirname + '/public' + filename, function (err, data) {
+  fs.readFile(__dirname + '/public' + filename, { encoding: 'utf8' }, function (err, data) {
     if (err) {
       res.writeHead(404);
       res.end(JSON.stringify(err));
       return;
     }
-    res.writeHead(200);
+    res.writeHead(200, {
+      "Content-Type": "text/html charset=UTF-8"
+    });
     res.end(data);
   });
 }).listen(8080);
