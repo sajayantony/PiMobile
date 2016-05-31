@@ -47,3 +47,6 @@ process.on('SIGINT', function () {
   bot.destroy();
   process.exit();
 });
+
+
+console.log("Launch - http://IP:8080/")
