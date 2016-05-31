@@ -2,7 +2,7 @@
 
 A web based controller for the [CamJam EduKit 3](http://camjam.me/?page_id=1035) in NodeJS. The app uses [onoff](https://github.com/fivdi/onoff) 
 
-[img](/sample/sample.png)
+![Screenshot](/sample/sample.png)
 
 # Notes
 
