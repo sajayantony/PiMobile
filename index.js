@@ -43,6 +43,6 @@ wss.on('request', function (request) {
   });
 });
 
-process.on('SIGINT', function () {
+process.on('exit', function() {
   bot.destroy();
 });
