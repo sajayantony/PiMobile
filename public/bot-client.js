@@ -38,6 +38,7 @@
     }
 
     makeIntoPushButton(document.getElementById('btnForward'), "forward");
+    makeIntoPushButton(document.getElementById('btnbackward'), 'back');
 
     var status = D.getElementById('status');
     var webSocketConnection = Object.create({
