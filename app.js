@@ -30,16 +30,7 @@ wss.on('request', function (request) {
   connection.id = cid;
   connection.on('message', function (msg) {
     var message = msg.utf8Data;
-    switch (message) {
-      case "forward":
-        bot.forward();
-        break;
-      case "stop":
-        bot.stop();
-        break;
-      default:
-        bot.stop();
-    }
+    bot.doAction(message);
   });
 });
 
