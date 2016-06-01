@@ -1,7 +1,9 @@
 (function (D, windows) {
 
     // This function creates a closure and puts a mousedown handler on the element specified in the "button" parameter.
-    function makeButtonIncrement(button, action, initialDelay, multiplier) {
+    function makeIntoPushButton(button, action) {
+        var initialDelay = 500;
+        var multiplier = 0.7;
         var holdTimer, changeValue, timerIsRunning = false, delay = initialDelay;
         changeValue = function (e) {
             //webSocketConnection.send(action);
@@ -9,12 +11,14 @@
             if (delay > 20) delay = delay * multiplier;
             if (!timerIsRunning) {
                 console.log("Sending" + action);
+                button.style.background = "red";
                 webSocketConnection.send(action);
                 // When the function is first called, it puts an onmouseup handler on the whole document 
                 // that stops the process when the mouse is released. This is important if the user moves
                 // the cursor off of the button.
                 var endFunc = function () {
                     console.log("stop");
+                    button.style.background = "";
                     clearTimeout(holdTimer);
                     document.onmouseup = null;
                     timerIsRunning = false;
@@ -23,17 +27,17 @@
                 }
 
                 document.onmouseup = endFunc;
-                document.ontouchend = endFunc; 
+                document.ontouchend = endFunc;
                 timerIsRunning = true;
             }
             e.preventDefault();
         }
-        
-        button.ontouchstart = changeValue;        
+
+        button.ontouchstart = changeValue;
         button.onmousedown = changeValue;
     }
 
-    makeButtonIncrement(document.getElementById('btnForward'), "forward", 500, 0.7);
+    makeIntoPushButton(document.getElementById('btnForward'), "forward");
 
     var status = D.getElementById('status');
     var webSocketConnection = Object.create({
