@@ -2,31 +2,44 @@
 
 <head>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        button {
+            display: block;
+            height: 20%;
+            max-height: 200px;
+            width: 100%;            
+            font-size:5em;
+            margin:20px;    
+            background: #204d74;
+            color : #fff;
+            border-radius: 30px;        
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="jumbotron">
+        <div class="jumbotron text-center" >
             <h1>Pi Mobile</h1>
             <span id="status"></span>
         </div>
         <div class="container-fluid center-block">
             <div class="row">
-                <div class="col-xs-4 col-md-5"></div>
-                <div class="col-xs-4  col-md-4">
-                    <button class="btn btn-primary btn-lg" id="btnForward">▲</button></div>
+                <div class="col-xs-3 col-md-4"></div>
+                <div class="col-xs-5  col-md-3">
+                    <button id="btnForward">▲</button></div>
                 <div class="col-xs-4"></div>
             </div>
             <div class="row">
-                <div class="col-xs-2 col-md-4"></div>
-                <div class="col-xs-3  col-md-1"><button class="btn btn-primary btn-lg" id="btnLeft">◀</button></div>
+                <div class="col-xs-0 col-md-1"></div>
+                <div class="col-xs-5  col-md-4"><button  id="btnLeft">◀</button></div>
                 <div class="col-xs-1  col-md-1"></div>
-                <div class="col-xs-3"><button class="btn btn-primary btn-lg" id="btnRight">▶</button></div>
+                <div class="col-xs-5 col-md-4"><button  id="btnRight">▶</button></div>
             </div>
             <div class="row">
-                <div class="col-xs-4  col-md-5"></div>
-                <div class="col-xs-4  col-md-4">
-                    <button class="btn btn-primary btn-lg" id="btnBackward">▼</button></div>
+                <div class="col-xs-3  col-md-4"></div>
+                <div class="col-xs-5  col-md-3">
+                    <button  id="btnBackward">▼</button></div>
                 <div class="col-xs-4"></div>
             </div>
         </div>

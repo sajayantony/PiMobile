@@ -29,8 +29,7 @@
                 document.onmouseup = endFunc;
                 document.ontouchend = endFunc;
                 timerIsRunning = true;
-            }
-            e.preventDefault();
+            }          
         }
 
         button.ontouchstart = changeValue;
