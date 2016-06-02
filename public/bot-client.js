@@ -38,6 +38,8 @@
 
     makeIntoPushButton(document.getElementById('btnForward'), "forward");
     makeIntoPushButton(document.getElementById('btnBackward'), 'back');
+   makeIntoPushButton(document.getElementById('btnRight'), 'right');
+    makeIntoPushButton(document.getElementById('btnLeft'), 'left');
 
     var status = D.getElementById('status');
     var webSocketConnection = Object.create({
